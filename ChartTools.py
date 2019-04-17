@@ -210,10 +210,10 @@ class Speed_Feed(_CHART):
         route (optional) -- The route to filter results by e.g. 'I-95'. Valid values includes all interstates, US-50, MD-32, and MD-140.
         '''
         if route is None:
-            cls.get_geojson(cls.service_url)
+            return cls.get_geojson(cls.service_url)
         else:
             url = cls.service_url + '&' + urllib.parse.urlencode({'filter': route})
-            cls.get_geojson(url)
+            return cls.get_geojson(url)
 
 
 class RWIS_Feed(_CHART):
@@ -231,10 +231,10 @@ class RWIS_Feed(_CHART):
         station_name (optional) -- The name of the station to filter by e.g. 'IS 270 N, North of MD 80'
         '''
         if station_name is None:
-            cls.get_geojson(cls.service_url)
+            return cls.get_geojson(cls.service_url)
         else:
             url = cls.service_url + '&' + urllib.parse.urlencode({'filter': station_name})
-            cls.get_geojson(url)
+            return cls.get_geojson(url)
 
 
 class DMS_Feed(_CHART):
@@ -248,7 +248,7 @@ class DMS_Feed(_CHART):
         '''
         Returns a geojson of traffic cctv or None if no data is found.
         '''
-        cls.get_geojson(cls.service_url)
+        return cls.get_geojson(cls.service_url)
 
 
 class CCTV_Feed(_CHART):
@@ -262,7 +262,7 @@ class CCTV_Feed(_CHART):
         '''
         Returns a geojson of traffic cctv or None if no data is found.
         '''
-        cls.get_geojson(cls.service_url)
+        return cls.get_geojson(cls.service_url)
 
 
 class Snow_Emergency_Feed(object):

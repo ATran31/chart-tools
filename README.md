@@ -33,12 +33,12 @@ get_sensors() --> returns geojson
 ### RWIS_Feed
 Provide access to roadway weather sensors feed.
 #### Methods
-get_rwis() --> returns geojson
+get_sensors() --> returns geojson
 
 ### DMS_Feed
 Provides access to digital message sign feed.
 #### Methods
-get_msg_board() --> returns geojson
+get_msg_boards() --> returns geojson
 
 ### CCTV_Feed
 Provides access to traffic camera feed.
