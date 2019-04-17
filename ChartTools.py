@@ -27,6 +27,8 @@ class _CHART(object):
                 feature['properties'][attribute.tag] = attribute.text
 
             # assign coordinates, order should be [lon, lat]
+            feature['properties']['longitude'] = float(feature['properties']['longitude'])
+            feature['properties']['latitude'] = float(feature['properties']['latitude'])
             feature['geometry']['coordinates'][0] = feature['properties']['longitude']
             feature['geometry']['coordinates'][1] = feature['properties']['latitude']
 
